@@ -12,6 +12,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyHeadComponent } from './rutas/my-head/my-head.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { RutaGestionSucursalesComponent } from './rutas/ruta-gestion-sucursales/ruta-gestion-sucursales.component';
+import { RutaSistemaVentilacionComponent } from './rutas/ruta-sistema-ventilacion/ruta-sistema-ventilacion.component';
+import { RutaVistaUsuarioComponent } from './rutas/ruta-vista-usuario/ruta-vista-usuario.component';
+import { RutaVistaAdministradorComponent } from './rutas/ruta-vista-administrador/ruta-vista-administrador.component';
+import { HomeComponent } from './rutas/home/home.component';
 
 @NgModule({
   declarations: [ //Componentes
@@ -21,7 +26,12 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     RutaGestionUsuariosComponent,
     RutaGestionEmpresasComponent,
     RutaMenuComponent,
-    MyHeadComponent
+    MyHeadComponent,
+    RutaGestionSucursalesComponent,
+    RutaSistemaVentilacionComponent,
+    RutaVistaUsuarioComponent,
+    RutaVistaAdministradorComponent,
+    HomeComponent
   ],
   imports: [ //Modulos
     BrowserModule,

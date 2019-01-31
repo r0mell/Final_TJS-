@@ -4,6 +4,13 @@ import {MyHeadComponent} from "./rutas/my-head/my-head.component";
 import {RutaLoginComponent} from "./rutas/ruta-login/ruta-login.component";
 import {Ruta404Component} from "./rutas/ruta404/ruta404.component";
 import {RutaMenuComponent} from "./rutas/ruta-menu/ruta-menu.component";
+import {RutaGestionEmpresasComponent} from "./rutas/ruta-gestion-empresas/ruta-gestion-empresas.component";
+import {RutaGestionUsuariosComponent} from "./rutas/ruta-gestion-usuarios/ruta-gestion-usuarios.component";
+import {RutaGestionSucursalesComponent} from "./rutas/ruta-gestion-sucursales/ruta-gestion-sucursales.component";
+import {RutaSistemaVentilacionComponent} from "./rutas/ruta-sistema-ventilacion/ruta-sistema-ventilacion.component";
+import {RutaVistaAdministradorComponent} from "./rutas/ruta-vista-administrador/ruta-vista-administrador.component";
+import {RutaVistaUsuarioComponent} from "./rutas/ruta-vista-usuario/ruta-vista-usuario.component";
+import {HomeComponent} from "./rutas/home/home.component";
 
 const routes: Routes = [
   {
@@ -14,7 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'principal',
-    component: MyHeadComponent
+    component: MyHeadComponent,
+
+  },
+  {
+    path: 'home',
+    component: HomeComponent ,
+
   },
   {
     path: 'login',
@@ -26,10 +39,40 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    component: RutaMenuComponent
+    component: RutaMenuComponent,
+    children:[
+      {
+        path:'gestion_empresas',
+        component: RutaGestionEmpresasComponent
+      },
 
+      {
+        path:'gestion_usuarios',
+        component: RutaGestionUsuariosComponent
+      },
 
+      {
+        path:'gestion_sucursales',
+        component: RutaGestionSucursalesComponent
+      }  ,
+
+      {
+        path:'sistema_ventilacion',
+        component: RutaSistemaVentilacionComponent
+      },
+
+     ]
   },
+  {
+    path:'admin',
+    component: RutaVistaAdministradorComponent
+  },
+
+  {
+    path:'user',
+    component: RutaVistaUsuarioComponent
+  },
+
   {
     path:'**',
     redirectTo:'no-found'
