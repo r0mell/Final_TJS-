@@ -7,6 +7,6 @@ export interface Empresa {
  id: number;
  nombre: 'string';
  razonSocial: 'string';
- telefono: 'number';
+ telefono: number;
  correo: 'string';
 }

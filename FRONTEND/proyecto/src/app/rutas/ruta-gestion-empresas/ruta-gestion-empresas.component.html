@@ -1,16 +1,40 @@
 
 <!DOCTYPE html>
+
 <html>
 <header>
  <div class="contenedor">
-  <h1>Empresas</h1>
+  <h2>Empresas</h2>
  </div>
 </header>
 
 <main>
    <div>
-    <h2>Empresas</h2>
-    <p>Ruta Empresas</p>
+    <p>Gestione sus empresas</p>
+    
+    <table>
+     
+     <!-- tr -- table row -->
+     <tr>
+      <!-- tr -- table header-->
+      <th> Nombre </th>
+      <th> id </th>
+      <th> Accion </th>
+     </tr>
+     
+     <tr *ngFor="let empresa of empresas">
+      <td> {{empresa.nombre}} </td>
+      <td> {{empresa.id }} </td>
+      <td>
+      <button (click)="imprimir(empresa)"> Eliminar </button>
+      </td>
+     </tr>
+ 
+
+
+<!-- Directivas con importantes -->
+     <!-- *ngFor   Itera un Arreglo -->
+    </table>
    </div>
 </main>
 </html>

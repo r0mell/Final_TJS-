@@ -9,7 +9,7 @@ import {environment} from "../../../environments/environment";
 @Injectable()
 
 //Constructor sirve para inyectar dependencias.
-export class RazaRestService {
+export class EmpresaRest {
 
  nombreModelo = '/Empresa';
 
@@ -17,10 +17,11 @@ export class RazaRestService {
 
  }
 
- buscarTodo(): Observable< Empresa []> {
+ buscarTodo(): Observable<Empresa []> {
   // http client es un observable
-  const empresa$ = this._httpClient.get(environment.url+this.nombreModelo);
- return empresa$;
+  const empresa$ = this._httpClient
+   .get(environment.url + this.nombreModelo);
+  return empresa$;
  }
 
 
