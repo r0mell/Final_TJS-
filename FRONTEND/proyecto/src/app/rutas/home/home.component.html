@@ -6,10 +6,10 @@
     <input type="checkbox" id="menu-bar">
     <label class="fontawesome-align-justify" for="menu-bar"></label>
     <nav class="menu">
-      <a href="">Empresas</a>
-      <a href="">Sucursales</a>
-      <a href="">Areas</a>
-      <a href="">Sistema Ventilacion</a>
+      <a routerLink="/home/gestion_empresas">Empresas</a>
+      <a routerLink="/home/gestion_sucursales">Sucursales</a>
+      <a routerLink="/home/gestion_areas">Areas</a>
+      <a routerLink="/home/sistema_ventilacion">Sistema Ventilacion</a>
     </nav>
   </div>
 </header>
@@ -22,8 +22,12 @@
       <p>Sistema de ventilacion Airiness </p>
     </div>
   </section>
-
 </main>
+
+
+<router-outlet> </router-outlet>
+
+
 
 <footer>
   <div class="contenedor">
@@ -38,3 +42,5 @@
 </footer>
 
 </html>
+
+

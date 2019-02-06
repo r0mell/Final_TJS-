@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EmpresasService} from "../../servicios/empresas.service";
 
 @Component({
   selector: 'app-ruta-gestion-empresas',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaGestionEmpresasComponent implements OnInit {
 
-  constructor() { }
+ //Inyeccion de dependencias
+  constructor(
+   private readonly _empresaService: EmpresasService
+  ) { }
 
   ngOnInit() {
   }
