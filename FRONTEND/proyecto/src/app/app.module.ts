@@ -17,9 +17,11 @@ import {RutaSistemaVentilacionComponent} from './rutas/ruta-sistema-ventilacion/
 import {RutaVistaUsuarioComponent} from './rutas/ruta-vista-usuario/ruta-vista-usuario.component';
 import {RutaVistaAdministradorComponent} from './rutas/ruta-vista-administrador/ruta-vista-administrador.component';
 import {HomeComponent} from './rutas/home/home.component';
-import {EmpresasService} from "./servicios/empresas.service";
 import {HttpClientModule} from "@angular/common/http";
 import { RutaGestionAreasComponent } from './rutas/ruta-gestion-areas/ruta-gestion-areas.component';
+import {EmpresaRest} from "./servicios/rest/empresa-rest.service";
+import { RutaCrearEmpresaComponent } from './rutas/ruta-crear-empresa/ruta-crear-empresa.component';
+
 
 @NgModule({
  declarations: [ //Componentes
@@ -35,7 +37,8 @@ import { RutaGestionAreasComponent } from './rutas/ruta-gestion-areas/ruta-gesti
   RutaVistaUsuarioComponent,
   RutaVistaAdministradorComponent,
   HomeComponent,
-  RutaGestionAreasComponent
+  RutaGestionAreasComponent,
+  RutaCrearEmpresaComponent
  ],
  imports: [ //Modulos
   BrowserModule,
@@ -45,7 +48,7 @@ import { RutaGestionAreasComponent } from './rutas/ruta-gestion-areas/ruta-gesti
 
  ],
  providers: [
-  EmpresasService
+  EmpresaRest
  ], //Servicios
  bootstrap: [AppComponent] //El componente principal
 })

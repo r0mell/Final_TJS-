@@ -12,6 +12,7 @@ import {RutaVistaAdministradorComponent} from "./rutas/ruta-vista-administrador/
 import {RutaVistaUsuarioComponent} from "./rutas/ruta-vista-usuario/ruta-vista-usuario.component";
 import {HomeComponent} from "./rutas/home/home.component";
 import {RutaGestionAreasComponent} from "./rutas/ruta-gestion-areas/ruta-gestion-areas.component";
+import {RutaCrearEmpresaComponent} from "./rutas/ruta-crear-empresa/ruta-crear-empresa.component";
 
 const routes: Routes = [
  {
@@ -28,7 +29,10 @@ const routes: Routes = [
     path: 'gestion_empresas',
     component: RutaGestionEmpresasComponent
    },
-
+   {
+    path: 'crear-empresa',
+    component: RutaCrearEmpresaComponent
+   },
    {
     path: 'gestion_usuarios',
     component: RutaGestionUsuariosComponent

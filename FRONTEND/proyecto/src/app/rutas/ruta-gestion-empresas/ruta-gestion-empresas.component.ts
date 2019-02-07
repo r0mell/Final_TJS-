@@ -1,42 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-import {EmpresasService} from "../../servicios/empresas.service";
+import {Component, OnInit} from '@angular/core';
 import {EmpresaRest} from "../../servicios/rest/empresa-rest.service";
+import {Empresa} from "../../interfaces/Empresa";
 
 @Component({
-  selector: 'app-ruta-gestion-empresas',
-  templateUrl: './ruta-gestion-empresas.component.html',
-  styleUrls: ['./ruta-gestion-empresas.component.scss']
+ selector: 'app-ruta-gestion-empresas',
+ templateUrl: './ruta-gestion-empresas.component.html',
+ styleUrls: ['./ruta-gestion-empresas.component.scss']
 })
 export class RutaGestionEmpresasComponent implements OnInit {
 
 
- empresas: Empresa[]; 
+ empresas: Empresa[];
+
  //Inyeccion de dependencias
-  constructor(
-   private readonly _empresaRestService: EmpresaRest
-  ) {
+ constructor(
+  private readonly _empresaRestService: EmpresaRest
+ ) {
 
 
-  }
+ }
 
-  ngOnInit() {
-  }
+ ngOnInit() {
 
-  imprimir(emp: Empresa){
-   console.log("Hola",emp)
+  const empresa$ = this._empresaRestService.buscarTodo();
 
-   const indice = this.empresas
-    .findIndex( (empresaBuscar) =>
-    {return empresaBuscar.id = emp.id;});
+  empresa$
+   .subscribe(
+    (empresas: Empresa[]) => {
+     console.log(empresas);
+     this.empresas = empresas;
+    }, (error) => {
+     console.error('Error', error);
+    }
+   )
+ }
 
-   this.empresas.splice(indice,1);
-  }
+
+ eliminar(empresa: Empresa) {
+
+  const empresaEliminada$ = this._empresaRestService.eliminarPorId(empresa.id)
+
+  empresaEliminada$
+   .subscribe(
+    (empresaEliminada: Empresa) => {
+     console.log('Se Elimino', empresaEliminada)
+     const indice = this.empresas.findIndex((r) => r.id === empresa.id);
+
+     this.empresas.splice(indice,1);
+    },
+    (error) => {
+     console.log('Error', error);
+    }
+   )
+ }
 
 
+ /*
+ imprimir(emp: Empresa){
+  console.log("Hola",emp)
+
+  const indice = this.empresas
+   .findIndex( (empresaBuscar) =>
+   {return empresaBuscar.id = emp.id;});
+
+  this.empresas.splice(indice,1);
+ }
+*/
 
 }
 
-interface Empresa{
- nombre?: string;
- id?:number;
-}
